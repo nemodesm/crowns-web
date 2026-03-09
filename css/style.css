@@ -1,0 +1,506 @@
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* ==== Layout ==== */
+
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+* {
+    transition: color 250ms, background-color 250ms;
+}
+
+.ui {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+#main-view {
+    width: 100%;
+}
+
+/* Sidebar */
+
+#menu-sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 2.5em;
+    position: absolute;
+    height: 100%;
+    width: 16em;
+    z-index: 1;
+    left: -16em;
+    bottom: 0;
+    transition: left 250ms;
+}
+
+#menu-sidebar[open] {
+    left: 0;
+}
+
+#menu-sidebar-toggle {
+    z-index: 2;
+    position: relative;
+    left: 0;
+    top: 0;
+    height: 2.5em;
+    aspect-ratio: 1;
+}
+
+/* Player list */
+
+#player-list {
+    overflow: hidden;
+    transition: width 1000ms;
+    width: 0;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#player-list[open] {
+    width: 20em;
+}
+
+#player-list > button {
+    position: absolute;
+    right: 0;
+    width: 2.5em;
+    height: 2.5em;
+    overflow: hidden;
+}
+
+.title-container {
+    height: 2.5em;
+}
+
+.list_view {
+    height: 100%;
+    overflow-y: auto;
+}
+
+.game-player {
+    display: flex;
+    justify-content: space-between;
+    height: 2em;
+    align-items: center;
+    margin: 4px 0;
+}
+
+/* Menu bar */
+
+#top-menu {
+    height: 2.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+    position: relative;
+}
+
+#top-menu > div {
+    display: inherit;
+
+    > * {
+        margin: 2px;
+    }
+}
+
+#top-menu h2 {
+    margin: 0;
+}
+
+/* Map */
+
+.map-tile > img {
+    position: relative;
+    left: 0;
+    top: 0;
+
+    width: 25px;
+    height: 25px;
+}
+
+/* ==== Style ==== */
+
+/* Appearance */
+
+body {
+    font-family: "Atkinson Hyperlegible", sans-serif;
+
+    transition: color 250ms, background-color 250ms;
+}
+
+/* Colors */
+
+body {
+    --red-light: rgb(255, 56, 60);
+    --orange-light: rgb(255, 141, 40);
+    --yellow-light: rgb(255, 204, 0);
+    --green-light: rgb(52, 199, 79);
+    --mint-light: rgb(0, 200, 179);
+    --teal-light: rgb(0, 195, 208);
+    --cyan-light: rgb(0, 192, 232);
+    --blue-light: rgb(0, 136, 255);
+    --indigo-light: rgb(97, 85, 245);
+    --purple-light: rgb(203, 48, 224);
+    --pink-light: rgb(255, 45, 85);
+    --brown-light: rgb(172, 127, 94);
+
+    --gray-light: rgb(142, 142, 147);
+    --gray2-light: rgb(174, 174, 178);
+    --gray3-light: rgb(199, 199, 204);
+    --gray4-light: rgb(209, 209, 214);
+    --gray5-light: rgb(229, 229, 234);
+    --gray6-light: rgb(242, 242, 247);
+
+
+    --red-dark: rgb(255, 66, 69);
+    --orange-dark: rgb(255, 146, 48);
+    --yellow-dark: rgb(255, 214, 0);
+    --green-dark: rgb(49, 209, 88);
+    --mint-dark: rgb(0, 218, 195);
+    --teal-dark: rgb(0, 210, 224);
+    --cyan-dark: rgb(60, 211, 254);
+    --blue-dark: rgb(0, 145, 255);
+    --indigo-dark: rgb(109, 124, 255);
+    --purple-dark: rgb(219, 52, 242);
+    --pink-dark: rgb(255, 55, 95);
+    --brown-dark: rgb(183, 138, 102);
+
+    --gray-dark: rgb(142, 142, 147);
+    --gray2-dark: rgb(99, 99, 102);
+    --gray3-dark: rgb(72, 72, 74);
+    --gray4-dark: rgb(58, 58, 60);
+    --gray5-dark: rgb(44, 44, 46);
+    --gray6-dark: rgb(28, 28, 30);
+
+
+    --red-light-hicont: rgb(233, 21, 45);
+    --orange-light-hicont: rgb(197, 83, 0);
+    --yellow-light-hicont: rgb(161, 106, 0);
+    --green-light-hicont: rgb(0, 137, 50);
+    --mint-light-hicont: rgb(0, 133, 117);
+    --teal-light-hicont: rgb(0, 129, 152);
+    --cyan-light-hicont: rgb(0, 126, 174);
+    --blue-light-hicont: rgb(30, 110, 244);
+    --indigo-light-hicont: rgb(86, 74, 222);
+    --purple-light-hicont: rgb(176, 47, 194);
+    --pink-light-hicont: rgb(231, 18, 77);
+    --brown-light-hicont: rgb(149, 109, 81);
+
+    --gray-light-hicont: rgb(108, 108, 112);
+    --gray2-light-hicont: rgb(142, 142, 147);
+    --gray3-light-hicont: rgb(174, 174, 178);
+    --gray4-light-hicont: rgb(188, 188, 192);
+    --gray5-light-hicont: rgb(216, 216, 220);
+    --gray6-light-hicont: rgb(235, 235, 240);
+
+
+    --red-dark-hicont: rgb(255, 97, 101);
+    --orange-dark-hicont: rgb(255, 160, 86);
+    --yellow-dark-hicont: rgb(254, 223, 67);
+    --green-dark-hicont: rgb(74, 217, 107);
+    --mint-dark-hicont: rgb(84, 223, 203);
+    --teal-dark-hicont: rgb(59, 221, 236);
+    --cyan-dark-hicont: rgb(109, 217, 255);
+    --blue-dark-hicont: rgb(92, 184, 255);
+    --indigo-dark-hicont: rgb(167, 170, 255);
+    --purple-dark-hicont: rgb(234, 141, 255);
+    --pink-dark-hicont: rgb(255, 138, 196);
+    --brown-dark-hicont: rgb(219, 166, 121);
+
+    --gray-dark-hicont: rgb(174, 174, 178);
+    --gray2-dark-hicont: rgb(124, 124, 128);
+    --gray3-dark-hicont: rgb(84, 84, 86);
+    --gray4-dark-hicont: rgb(68, 68, 70);
+    --gray5-dark-hicont: rgb(54, 54, 56);
+    --gray6-dark-hicont: rgb(36, 36, 38);
+
+
+
+    --ui-background-primary: #212121;
+    --ui-background-secondary: #333;
+    --ui-background-border: none;
+
+    --ui-text-primary: #EFEFEF;
+    --ui-text-secondary: #A2A2A2;
+
+    --ui-button-background: #555;
+    --ui-button-background-border: none;
+    --ui-button-text: #EFEFEF;
+}
+
+body[theme="dark"] {
+    --red: var(--red-dark);
+    --orange: var(--orange-dark);
+    --yellow: var(--yellow-dark);
+    --green: var(--green-dark);
+    --mint: var(--mint-dark);
+    --teal: var(--teal-dark);
+    --cyan: var(--cyan-dark);
+    --blue: var(--blue-dark);
+    --indigo: var(--indigo-dark);
+    --purple: var(--purple-dark);
+    --pink: var(--pink-dark);
+    --brown: var(--brown-dark);
+
+    --gray: var(--gray-dark);
+    --gray2: var(--gray2-dark);
+    --gray3: var(--gray3-dark);
+    --gray4: var(--gray4-dark);
+    --gray5: var(--gray5-dark);
+    --gray6: var(--gray6-dark);
+}
+
+body[theme="light"] {
+    --red: var(--red-light);
+    --orange: var(--orange-light);
+    --yellow: var(--yellow-light);
+    --green: var(--green-light);
+    --mint: var(--mint-light);
+    --teal: var(--teal-light);
+    --cyan: var(--cyan-light);
+    --blue: var(--blue-light);
+    --indigo: var(--indigo-light);
+    --purple: var(--purple-light);
+    --pink: var(--pink-light);
+    --brown: var(--brown-light);
+
+    --gray: var(--gray-light);
+    --gray2: var(--gray2-light);
+    --gray3: var(--gray3-light);
+    --gray4: var(--gray4-light);
+    --gray5: var(--gray5-light);
+    --gray6: var(--gray6-light);
+
+
+
+    --ui-background-primary: #EFEFEF;
+    --ui-background-secondary: #E0E0E0;
+    --ui-background-border: none;
+
+    --ui-text-primary: #000;
+    --ui-text-secondary: #333;
+
+    --ui-button-background: #555;
+    --ui-button-background-border: none;
+    --ui-button-text: #EFEFEF;
+}
+
+body[theme="dark-hicont"] {
+    --red: var(--red-dark-hicont);
+    --orange: var(--orange-dark-hicont);
+    --yellow: var(--yellow-dark-hicont);
+    --green: var(--green-dark-hicont);
+    --mint: var(--mint-dark-hicont);
+    --teal: var(--teal-dark-hicont);
+    --cyan: var(--cyan-dark-hicont);
+    --blue: var(--blue-dark-hicont);
+    --indigo: var(--indigo-dark-hicont);
+    --purple: var(--purple-dark-hicont);
+    --pink: var(--pink-dark-hicont);
+    --brown: var(--brown-dark-hicont);
+
+    --gray: var(--gray-dark-hicont);
+    --gray2: var(--gray2-dark-hicont);
+    --gray3: var(--gray3-dark-hicont);
+    --gray4: var(--gray4-dark-hicont);
+    --gray5: var(--gray5-dark-hicont);
+    --gray6: var(--gray6-dark-hicont);
+
+
+
+    --ui-background-primary: #000;
+    --ui-background-secondary: #000;
+    --ui-background-border: solid 4px #FF0;
+
+    --ui-text-primary: #FFF;
+    --ui-text-secondary: #FFF;
+
+    --ui-button-background: #555;
+    --ui-button-background-border: solid 4px #0FF;
+    --ui-button-text: #EFEFEF;
+}
+
+body[theme="light-hicont"] {
+    --red: var(--red-light-hicont);
+    --orange: var(--orange-light-hicont);
+    --yellow: var(--yellow-light-hicont);
+    --green: var(--green-light-hicont);
+    --mint: var(--mint-light-hicont);
+    --teal: var(--teal-light-hicont);
+    --cyan: var(--cyan-light-hicont);
+    --blue: var(--blue-light-hicont);
+    --indigo: var(--indigo-light-hicont);
+    --purple: var(--purple-light-hicont);
+    --pink: var(--pink-light-hicont);
+    --brown: var(--brown-light-hicont);
+
+    --gray: var(--gray-light-hicont);
+    --gray2: var(--gray2-light-hicont);
+    --gray3: var(--gray3-light-hicont);
+    --gray4: var(--gray4-light-hicont);
+    --gray5: var(--gray5-light-hicont);
+    --gray6: var(--gray6-light-hicont);
+
+
+
+    --ui-background-primary: #EFEFEF;
+    --ui-background-secondary: #E0E0E0;
+    --ui-background-border: solid 4px #880;
+
+    --ui-text-primary: #000;
+    --ui-text-secondary: #333;
+
+    --ui-button-background: #555;
+    --ui-button-background-border: solid 4px #088;
+    --ui-button-text: #EFEFEF;
+}
+
+#top-menu {
+    background: var(--gray6);
+    color: var(--ui-text-primary);
+}
+
+#menu-sidebar {
+    background: var(--gray6);
+    color: var(--ui-text-primary);
+}
+
+#player-list {
+    background: var(--gray6);
+    color: var(--ui-text-primary);
+}
+
+.game-player {
+    background: var(--gray5);
+    /* outline: var(--ui-background-border); */
+}
+
+.button {
+    background: var(--gray3);
+    border: none;
+    /* border: var(--ui-button-background-border); */
+    color: var(--ui-button-text);
+}
+
+/* TODO clean up and integrate */
+
+/* GENERAL STYLES */
+.visuallyHidden {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+.container {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Unintegrated */
+
+.hamburger {
+    width: 25px;
+    height: 25px;
+    position: relative;
+}
+
+.hamburger .bar {
+    padding: 0;
+    width: 25px;
+    height: 4px;
+    background-color: var(--ui-text-primary);
+    display: block;
+    border-radius: 4px;
+    transition: all 0.4s ease-in-out;
+    --position: absolute;
+}
+
+.hamburger3 {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.bar1 {
+    top: 1px;
+}
+
+.bar2 {
+    transform-origin: 64.3%;
+}
+
+.bar3 {
+    transform-origin: 67.5%;
+}
+
+.bar3 {
+    right: 0;
+}
+
+.bar4 {
+    bottom: 0;
+}
+
+/* HAMBURGER 3 */
+
+.hamburger3 .bar1 {
+    transform-origin: 5%;
+}
+
+.hamburger3 .bar4 {
+    transform-origin: 5%;
+}
+
+.checkbox3:checked + label > .hamburger3 > .bar1 {
+    transform: rotate(45deg);
+    height: 3px;
+    width: 33px;
+}
+
+.checkbox3:checked + label > .hamburger3 > .bar3 {
+    transform: rotate(45deg);
+    height: 3px;
+    --background-color: transparent;
+}
+
+.checkbox3:checked + label > .hamburger3 > .bar2 {
+    transform: rotate(-45deg);
+    height: 3px;
+    --background-color: transparent;
+}
+
+.checkbox3:checked + label > .hamburger3 > .bar4 {
+    transform: rotate(-45deg);
+    height: 3px;
+    width: 33px;
+}
+
+@media(prefers-reduced-motion: reduce)
+{
+    * {
+        transition: none !important;
+    }
+}
+
+@media tty {
+    * {
+        background-color: #FF00FF !important;
+    }
+}

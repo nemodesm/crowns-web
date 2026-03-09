@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Crowns</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <script src="js/app.js"></script>
+</head>
+
+<body>
+<div id="menu-sidebar">
+    <div>// TODO primary actions</div>
+    <div>
+        qp <br/>
+        db <br/>
+        0O <br/>
+        nu <br/>
+        il1I <br/>
+        69 <br/>
+        a8 <br/>
+        a6 <br/>
+        6g <br/>
+        rn, m <br/>
+    </div>
+    <div>Settings
+        <div class="setting">
+            <p>Theme</p>
+            <div class="button-group">
+                <button class="button button-text" onclick="setTheme('light')">Light</button>
+                <button class="button button-text" onclick="setTheme('dark')">Dark</button>
+                <button class="button button-text" onclick="setTheme('light-hicont')">Light (High Contrast)</button>
+                <button class="button button-text" onclick="setTheme('dark-hicont')">Dark (High Contrast)</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="ui">
+    <div id="player-list" open>
+        <button class="button button-icon" onclick="toggle_player_list()">Toggle player list</button>
+        <div class="title-container">
+            Players:
+        </div>
+        <div class="list_view">
+            <div class="game-player">
+                <p>
+                    Usr1
+                </p>
+                <button class="button button-text">Inspect</button>
+            </div>
+            <div class="game-player">
+                <p>
+                    Usr2
+                </p>
+                <button class="button button-text">Inspect</button>
+            </div>
+            <div class="game-player">
+                <p>
+                    Usr3
+                </p>
+                <button class="button button-text">Inspect</button>
+            </div>
+        </div>
+    </div>
+    <div id="main-view">
+        <div id="top-menu">
+            <div>
+                <div>
+                    <input type="checkbox" id="checkbox3" class="checkbox3 visuallyHidden" onclick="toggle_menu()">
+                    <label for="checkbox3">
+                        <div class="hamburger hamburger3">
+                            <span class="bar bar1"></span>
+                            <span class="bar bar2"></span>
+                            <span class="bar bar3"></span>
+                            <span class="bar bar4"></span>
+                        </div>
+                    </label>
+                </div>
+                <!--<button class="button button-icon" id="menu-sidebar-toggle" onclick="toggle_menu()">Toggle Menu</button>-->
+                <!-- TODO: clean up & integrate-->
+                <h2>
+                    Crowns
+                </h2>
+            </div>
+            <div class="top-menu-actions">
+                <button class="button button-text">Go To</button>
+                <button class="button button-text" popovertarget="achievements-popover">Achievements</button>
+            </div>
+        </div>
+        <div class="map">
+            <div class="map-row">
+                <div class="map-tile">
+                    <img class="tile-terrain" src="images/background/tmp.png" alt="bg"><img class="tile-building"
+                                                                                            src="img/building/tmp.png"
+                                                                                            alt="build"><img
+                        class="tile-unit" src="img/unit/tmp.png" alt="unit">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div popover="manual" id="achievements-popover">
+    <span>
+        <span class="player-name">{PlayerName}</span>'s Achievements:
+    </span>
+    <div class="achievements-list list_view"></div>
+    <div class="menu-footer">
+        <div>
+            <button popovertarget="achievements-popover">Close</button><!-- TODO: Close button -->
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
